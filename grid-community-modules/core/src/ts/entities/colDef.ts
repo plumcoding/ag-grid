@@ -509,6 +509,8 @@ export interface ColDef<TData = any, TValue = any> extends AbstractColDef<TData,
     minWidth?: number;
     /** Maximum width in pixels for the cell. */
     maxWidth?: number;
+    /** Maximum width in pixels for the cell when autosizing */
+    preferredMaxWidth?: number;
     /** Used instead of `width` when the goal is to fill the remaining empty space of the grid. */
     flex?: number;
     /** Same as `flex`, except only applied when creating a new column. Not applied when updating column definitions. */

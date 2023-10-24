@@ -41,7 +41,14 @@ export class AutoWidthCalculator extends BeanStub {
             elements.push(eHeaderCell);
         }
 
-        return this.addElementsToContainerAndGetWidth(elements);
+        const contentWidth = this.addElementsToContainerAndGetWidth(elements);
+
+        const { preferredMaxWidth } = column.getColDef()
+        if (typeof preferredMaxWidth === 'number' && preferredMaxWidth > 0) {
+            return Math.min(contentWidth, preferredMaxWidth);
+        } else {
+            return contentWidth;
+        }
     }
 
     public getPreferredWidthForColumnGroup(columnGroup: ColumnGroup): number {

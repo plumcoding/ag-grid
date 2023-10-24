@@ -62,6 +62,7 @@ export class ColDefUtil {
         initialWidth: undefined,
         minWidth: undefined,
         maxWidth: undefined,
+        preferredMaxWidth: undefined,
         rowGroupIndex: undefined,
         initialRowGroupIndex: undefined,
         pivotIndex: undefined,
